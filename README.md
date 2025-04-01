@@ -1,73 +1,136 @@
-*TextMentor - Assistente de Escrita Alimentado por IA* 🤖✍️
+# TextMentor - Sistema Avançado de Processamento de Linguagem Natural 🤖✍️
 
 ![TextMentorAI](/assets/img/text.gif)
 
-O TextMentor é uma poderosa ferramenta web que utiliza inteligência artificial de ponta para aprimorar seus textos. Com recursos avançados como correção gramatical, reescrita de texto, resumo inteligente e sugestões de melhoria, o TextMentor é seu parceiro confiável para uma escrita impecável. 📝💡
+## Visão Geral da Arquitetura
 
-✨ Recursos Principais
+O TextMentor é uma aplicação web de alta performance que implementa algoritmos de processamento de linguagem natural (NLP) para análise e otimização textual. A arquitetura do sistema foi projetada seguindo padrões de microserviços, garantindo escalabilidade horizontal e isolamento de componentes para máxima resiliência operacional.
 
-🔍 Correção Gramatical: Elimine erros ortográficos, gramaticais e de pontuação com precisão.
-🎨 Reescrita de Texto: Reformule seus textos em diferentes tons, adaptando-os ao seu público-alvo.
-📚 Resumo Inteligente: Obtenha resumos concisos que capturam a essência do seu texto.
-💡 Sugestões de Melhoria: Receba recomendações personalizadas para elevar a qualidade da sua escrita.
-😊 Análise de Sentimento: Descubra o tom emocional do seu texto e obtenha insights valiosos.
-📜 Histórico de Edições: Acesse versões anteriores do seu texto para comparação e referência.
+## 🔧 Recursos e Implementações Técnicas
 
-🛠️ Tecnologias Utilizadas
+| Funcionalidade | Implementação Técnica |
+|----------------|------------------------|
+| **Correção Gramatical** | Algoritmos de análise sintática com processamento em paralelo para detecção contextual de erros |
+| **Reescrita de Texto** | Modelos de transformação baseados em redes neurais com atenção multihead para preservação semântica |
+| **Resumo Inteligente** | Implementação de algoritmos de extração e abstração com atenção transformacional |
+| **Sugestões de Melhoria** | Sistema de regras heurísticas combinado com aprendizado de máquina supervisionado |
+| **Análise de Sentimento** | Classificadores de sentimento treinados em corpus multilíngue com fine-tuning específico |
+| **Histórico de Edições** | Sistema de versionamento incremental com compressão delta para otimização de armazenamento |
 
-Frontend: HTML5, CSS3, JavaScript, Bootstrap 5
-Bibliotecas JS:
+## 🏗️ Stack Tecnológica
 
-Typed.js para efeitos de digitação
-AOS (Animate on Scroll) para animações de scroll
-Particles.js para efeitos de partículas animadas no background
-Prism.js para realce de sintaxe do código
+### Frontend
+- **Framework Base**: HTML5/CSS3 com implementação de Web Components
+- **JavaScript**: Arquitetura modular baseada em ES6+ com padrão Observer
+- **UI Framework**: Bootstrap 5 com customização via SASS para otimização de bundle
+- **Otimização de Runtime**:
+  - Implementação de lazy-loading para módulos não críticos
+  - Service Workers para funcionalidade offline e cache estratégico
+  - Bundle splitting e code-splitting para otimização de carregamento inicial
+
+### Bibliotecas JavaScript Integradas
+```javascript
+// Gerenciamento de dependências via módulos ES6
+import { typed } from 'typed.js';         // Efeitos de digitação com performance otimizada
+import AOS from 'aos';                    // Sistema de animações baseado em Intersection Observer API
+import { particlesConfig } from './config';  // Configuração otimizada para renderização de partículas
+import Prism from 'prismjs';              // Realce sintático com suporte a múltiplas linguagens
+
+┌─────────────────────────────────────────────────────┐
+│                    Cliente (Browser)                 │
+└───────────────────────┬─────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────┐
+│                Traefik (Load Balancer)              │
+└───────────────────────┬─────────────────────────────┘
+                        │
+           ┌────────────┴────────────┐
+           │                         │
+           ▼                         ▼
+┌────────────────────┐    ┌─────────────────────┐
+│   Frontend (Nginx) │    │ API (PHP-FPM/Nginx) │
+└────────┬───────────┘    └─────────┬───────────┘
+         │                          │
+         │                          ▼
+         │               ┌─────────────────────┐
+         │               │  Serviço de Cache   │
+         │               │     (Redis)         │
+         │               └─────────┬───────────┘
+         │                         │
+         └─────────────────┬───────┘
+                           │
+                           ▼
+                 ┌─────────────────────┐
+                 │    Banco de Dados   │
+                 │     (MariaDB)       │
+                 └─────────────────────┘
+🚀 Procedimento de Implantação
+# Clonar o repositório com suporte para submodules
+git clone --recursive https://github.com/DevNayaraVieira/textmentorAI.git
+
+# Navegar ao diretório do projeto
+cd textmentorAI
+
+# Configurar variáveis de ambiente para diferentes ambientes
+cp .env.example .env
+nano .env  # Configurar parâmetros específicos do ambiente
+
+# Construir e iniciar containers em modo detached
+docker-compose up -d --build
+
+# Executar migrations para preparação do banco de dados
+docker-compose exec api php artisan migrate --seed
+
+# Verificar status dos serviços
+docker-compose ps
+
+💻 Ambiente de Desenvolvimento
+O ambiente de desenvolvimento foi projetado com foco em DevOps e CI/CD:
+
+Padronização de Código: ESLint e PHP_CodeSniffer com configurações personalizadas
+Testes Automatizados:
+
+PHPUnit para testes unitários e de integração
+Jest para testes unitários de JavaScript
+Cypress para testes E2E
 
 
-Armazenamento: LocalStorage para manter o histórico e as preferências do usuário
-API Externa: Integração opcional com a HuggingFace Inference API para recursos avançados de IA
+Fluxo de Trabalho Git: Implementação de Gitflow com hooks pre-commit para validação
+CI/CD: Pipelines automatizados para build, teste e deployment em ambientes segregados
 
-🚀 Começando
+🔒 Considerações de Segurança
 
-Clone o repositório: git clone https://github.com/DevNayaraVieira/textmentorAI.git
-Navegue até o diretório do projeto: cd textmentorAI
-Abra o arquivo index.html no seu navegador favorito.
-Comece a explorar o poder do TextMentor para aprimorar sua escrita! ✨
+Implementação de OWASP Top 10 mitigations
+Scanning regular de dependências com Dependabot
+Análise estática de código via SonarQube
+Testes de penetração periódicos documentados
+Gerenciamento centralizado de sessões com invalidação segura
 
-💻 Desenvolvimento
-Este projeto foi desenvolvido seguindo as melhores práticas de programação e os mais altos padrões de qualidade. Algumas das tecnologias e princípios utilizados incluem:
+🤝 Protocolo de Contribuição
+As contribuições seguem um fluxo estruturado para garantir qualidade e estabilidade:
 
-PHP 8.4 com tipagem forte para um código mais robusto e seguro 🔒
-Arquitetura MVC personalizada para uma estrutura de projeto organizada e escalável 🏗️
-Princípios SOLID para um design de software flexível e de fácil manutenção 💪
-Composer v2 para gerenciamento eficiente de dependências 📦
-jQuery v3 para interações dinâmicas no frontend 🌐
+Fork do repositório
+Criação de branch feature/fix específica (git checkout -b feature/nova-funcionalidade)
+Commits semanticamente versionados (seguindo Conventional Commits)
+Push para o branch (git push origin feature/nova-funcionalidade)
+Abertura de Pull Request detalhado
+Code review e CI verification
+Merge após aprovação
 
-Plugins jQuery compatíveis:
+📊 Monitoramento e Métricas
+O sistema implementa monitoramento em múltiplas camadas:
 
-Select2 para aprimorar campos de seleção
-DataTables para tabelas interativas e pesquisáveis
-SweetAlert2 para alertas e confirmações estilizadas
+Métricas de aplicação via Prometheus
+Logging estruturado em formato JSON
+Tracing distribuído com OpenTelemetry
+Visualização de métricas via Grafana
+Alertas configuráveis baseados em thresholds
 
-Template administrativo Tabler.io com Bootstrap 5 para uma interface elegante e responsiva 💅
-MariaDB para armazenamento confiável dos dados 💾
-Containers Docker para implantação simplificada e consistente 🐳
-Portainer e Traefik para gerenciamento eficiente da infraestrutura 🛠️
-Implementação de:
-
-Injeção de Dependência para um código mais modular
-Tratamento de Erros com Exceções para uma melhor experiência do usuário
-Prepared Statements para segurança contra ataques de SQL injection
-Autenticação com Session segura
-Migrations para versionamento e evolução do banco de dados
-
-🤝 Contribuição
-Contribuições, issues e pedidos de features são bem-vindos! Sinta-se à vontade para verificar a página de issues para obter uma lista completa das funcionalidades propostas e problemas conhecidos.
-⭐ Apoie o Projeto
-Se você achou este projeto útil, por favor considere dar uma estrela no repositório do GitHub. Isso ajuda a aumentar a visibilidade do projeto e a mostrar seu apoio. Obrigada! 😊
 📄 Licença
-Este projeto está licenciado sob a MIT License.
-👩‍💻 Autora
-Feito com ❤️ por Nayara Vieira. Entre em contato! 📧
+Este projeto está licenciado sob a MIT License. Consulte o arquivo LICENSE para detalhes completos.
+👩‍💻 Autoria e Manutenção
+Desenvolvido e mantido por Nayara Vieira.
+Contato: [nayvieira_@hotmail.com]
 
-Eleve sua escrita ao próximo nível com o TextMentor - seu assistente de escrita alimentado por IA! ✍️🚀
+TextMentor: Transformando Processamento de Texto em Inteligência Acionável
