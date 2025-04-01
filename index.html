@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="TextMentor - Assistente de escrita inteligente com IA. Corrija erros gramaticais, reescreva textos, crie resumos e receba sugestões para melhorar sua escrita.">
+<meta name="keywords" content="assistente de escrita, IA, inteligência artificial, correção gramatical, reescrita de texto, resumo de texto, melhorar escrita">
+<meta name="author" content="DevNayaraVieira">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextMentorAI - Assistente de Escrita com IA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/editor-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="assets/css/theme-switch.css">
+    <link rel="stylesheet" href="assets/css/cursor-styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/icon.svg">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon-azul.png">
+
+    
+</head>
+<body>
+    <!-- Cursor personalizado -->
+    <div id="custom-cursor"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/icone.png" alt="TextMentor Icon" style="width: 30px; height: 30px; margin-right: 10px; vertical-align: middle;">
+                TextMentorAI <span>Assistente IA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Como Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#editor">Editor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">Exemplos</a>
+                    </li>
+                    <li class="nav-item">
+                                    <div class="theme-switch-wrapper">
+                                        <label class="theme-switch" for="themeSwitch">
+                                            <input type="checkbox" id="themeSwitch">
+                                            <div class="slider">
+                                                <i class="fas fa-sun icon sun-icon"></i>
+                                                <i class="fas fa-moon icon moon-icon"></i>
+                                            </div>                               
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="hero-content col-lg-6 animate">
+                    <div class="hero-badge">Powered by AI</div>
+                    <h1 class="hero-title">Seu assistente de escrita inteligente</h1>
+                    <h2 class="hero-subtitle">Transforme sua escrita com <span class="typed-text">IA</span></h2>
+                    <p class="mb-4">TextMentor utiliza inteligência artificial para ajudar você a melhorar seus textos, corrigir erros e potencializar sua comunicação escrita - tudo de forma gratuita e simples.</p>
+                    <div class="d-flex">
+                        <a href="#editor" class="btn btn-azul me-3">Comece agora</a>
+                        <a href="#features" class="btn btn-outline-dark">Conheça os recursos</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image">
+                    <img src="assets/img/logo.jpg" alt="TextMentor AI Assistant" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section bg-azul-bebe" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Recursos Inteligentes</h2>
+                <p class="section-subtitle">Descubra como o TextMentor pode transformar sua escrita</p>
+            </div>
+            <div class="row justify-content-center">
+                <!-- Feature 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h3 class="skill-title">Correção Gramatical</h3>
+                        <p>Corrija erros gramaticais, ortográficos e de pontuação com um clique usando IA avançada.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="skill-title">Reescrita de Texto</h3>
+                        <p>Transforme seu texto para soar mais profissional, amigável ou acadêmico, conforme sua necessidade.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h3 class="skill-title">Resumo Inteligente</h3>
+                        <p>Resuma textos longos mantendo os pontos principais e as informações mais relevantes.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="skill-title">Sugestões de Melhoria</h3>
+                        <p>Receba dicas personalizadas para tornar seu texto mais claro, conciso e impactante.</p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="skill-title">Ajuste de Tom</h3>
+                        <p>Ajuste o tom do seu texto para se adequar a diferentes contextos e públicos-alvo.</p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 class="skill-title">Histórico de Edições</h3>
+                        <p>Acesse suas edições anteriores e versões dos seus textos para comparar melhorias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section bg-cinza-azulado" id="how-it-works">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Como Funciona</h2>
+                <p class="section-subtitle">Um processo simples e eficiente para melhorar seus textos</p>
+            </div>
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Passo 1</span>
+                        <h3 class="timeline-title">Escreva ou Cole seu Texto</h3>
+                        <p>Comece escrevendo seu texto no editor ou cole um conteúdo existente que você deseja melhorar.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Passo 2</span>
+                        <h3 class="timeline-title">Escolha a Funcionalidade</h3>
+                        <p>Selecione entre correção gramatical, reescrita, resumo, sugestões ou ajuste de tom para seu texto.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Passo 3</span>
+                        <h3 class="timeline-title">IA Processa seu Texto</h3>
+                        <p>Nossa inteligência artificial analisa seu texto e aplica as melhorias solicitadas em segundos.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Passo 4</span>
+                        <h3 class="timeline-title">Revise e Aprove</h3>
+                        <p>Veja as alterações sugeridas, faça ajustes adicionais se necessário e aprove o resultado final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor Section -->
+    <section class="section" id="editor">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Editor TextMentor</h2>
+                <p class="section-subtitle">Experimente nosso assistente de IA para melhorar seus textos</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="editor-wrapper">
+                        <div class="editor-toolbar">
+                            <button type="button" class="btn btn-tool" id="btnGrammar" title="Corrigir Gramática">
+                                <i class="fas fa-spell-check"></i> Corrigir
+                            </button>
+                            <button type="button" class="btn btn-tool" id="btnRewrite" title="Reescrever Texto">
+                                <i class="fas fa-file-alt"></i> Reescrever
+                            </button>
+                            <button type="button" class="btn btn-tool" id="btnSummarize" title="Resumir Texto">
+                                <i class="fas fa-compress-alt"></i> Resumir
+                            </button>
+                            <button type="button" class="btn btn-tool" id="btnSuggestions" title="Sugestões de Melhoria">
+                                <i class="fas fa-lightbulb"></i> Sugestões
+                            </button>
+                            <div class="tone-selector">
+                                <label for="toneSetting">Tom:</label>
+                                <select id="toneSetting" class="form-select form-select-sm">
+                                    <option value="professional">Profissional</option>
+                                    <option value="casual">Casual</option>
+                                    <option value="academic">Acadêmico</option>
+                                    <option value="friendly">Amigável</option>
+                                    <option value="formal">Formal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="editor-content">
+                            <div class="editor-input-container">
+                                <textarea id="editorInput" class="form-control" rows="10" placeholder="Escreva ou cole seu texto aqui..."></textarea>
+                                <div class="char-counter">0 caracteres</div>
+                            </div>
+                            <div class="editor-output-container" style="display: none;">
+                                <div class="result-header">
+                                    <h4>Resultado</h4>
+                                    <button type="button" class="btn btn-sm btn-azul" id="btnCopy">
+                                        <i class="far fa-copy"></i> Copiar
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-dark" id="btnBack">
+                                        <i class="fas fa-arrow-left"></i> Voltar
+                                    </button>
+                                </div>
+                                <div id="editorOutput" class="editor-output"></div>
+                            </div>
+                        </div>
+                        <div class="editor-actions">
+                            <!-- 4. Atualizar outros botões -->
+                        <button type="button" class="btn btn-azul" id="btnProcess">
+                            <i class="fas fa-magic"></i> Processar com IA
+                        </button>
+                            <button type="button" class="btn btn-outline-dark" id="btnClear">
+                                <i class="fas fa-eraser"></i> Limpar
+                            </button>
+                        </div>
+                        <div class="processing-indicator">
+                            <div class="spinner"></div>
+                            <p>Processando seu texto com IA...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Modal de Histórico -->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="historyModalLabel">Histórico de Edições</h5>
+            <button type="button" class="btn btn-sm btn-azul" data-bs-dismiss="modal">Fechar</button>
+            <button class="btn btn-sm btn-azul history-btn btn-restore">
+                <i class="fas fa-redo-alt"></i> Restaurar
+            </button>
+            </div>
+            <div class="modal-body">
+            <div class="history-list">
+                <!-- O histórico será carregado aqui via JavaScript -->
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-outline-dark btn-clear-history">Limpar Histórico</button>
+            <button type="button" class="btn btn-sm btn-azul" data-bs-dismiss="modal">Fechar</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-tool" data-bs-toggle="modal" data-bs-target="#historyModal">
+        <i class="fas fa-history"></i> Histórico
+      </button>
+
+    <!-- Examples Section -->
+    <section class="section bg-azul-bebe" id="examples">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Exemplos de Uso</h2>
+                <p class="section-subtitle">Veja como o TextMentor pode transformar diferentes tipos de texto</p>
+            </div>
+            <div class="row justify-content-center">
+                <!-- Example 1 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Email Profissional</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Antes</span>
+                            </div>
+                            <p class="example-before">Olá, estou enviando esse email para informar que não vou poder entregar o relatório hoje porque tive uns problemas. Acho que até amanhã consigo terminar ele. Me desculpe pelo atraso.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Depois</span>
+                            </div>
+                            <p class="example-after">Prezado(a), Escrevo para informar que, devido a circunstâncias imprevistas, não será possível entregar o relatório na data de hoje. Comprometo-me a finalizá-lo e enviá-lo até amanhã. Peço desculpas por qualquer inconveniente causado e agradeço pela compreensão.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example 2 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Texto Acadêmico</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Antes</span>
+                            </div>
+                            <p class="example-before">As alterações climáticas são um problema grande nos dias de hoje. Muitos cientistas afirmam que vai ter grandes impactos no futuro e que precisamos mudar nossos hábitos.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Depois</span>
+                            </div>
+                            <p class="example-after">As mudanças climáticas constituem uma das maiores preocupações contemporâneas. Diversos estudos científicos indicam que essas alterações poderão exercer impactos significativos em escala global, demandando uma reestruturação substancial dos padrões de consumo e hábitos sociais atuais.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example 3 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Resumo de Texto</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Texto Original (Resumido)</span>
+                            </div>
+                            <p class="example-before">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nunc eget magna tristique sollicitudin. Aenean non magna at libero faucibus facilisis. Vestibulum sollicitudin eros ac ligula varius, at placerat nisi facilisis. Nulla facilisi. Proin rhoncus quam a tellus fermentum, in lacinia enim imperdiet...</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Resumo Inteligente</span>
+                            </div>
+                            <p class="example-after">O texto aborda características de um sistema de design com foco na facilidade de uso. Destaca elementos de interface e funcionalidades que melhoram a experiência do usuário em plataformas digitais.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example 4 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Correção Gramatical</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Antes</span>
+                            </div>
+                            <p class="example-before">Nós vai fazer a apresentação amanhã. Eu está muito nervoso por que nunca falei em publico antes mais tenho serteza que vai dar tudo serto.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Depois</span>
+                            </div>
+                            <p class="example-after">Nós vamos fazer a apresentação amanhã. Eu estou muito nervoso porque nunca falei em público antes, mas tenho certeza que vai dar tudo certo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                <h3 class="mb-4 text-white">TextMentor</h3>
+                <p class="text-white-75">Assistente de escrita inteligente, gratuito e simples, que utiliza IA para ajudar você a aprimorar seus textos.</p>
+                <p class="text-white-50">Desenvolvido como ferramenta educacional para escritores, estudantes e profissionais.</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h4 class="mb-4 text-white">Desenvolvedores</h4>
+                <div class="developer-links">
+                    <a href="https://portfolio-devnayaravieira.netlify.app" target="_blank" class="developer-link">
+                        <i class="fas fa-user"></i> Portfólio Profissional
+                    </a>                       
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <h4 class="mb-4 text-white">Conecte-se</h4>
+                <div class="social-links">
+                    <a href="https://github.com/DevNayaraVieira" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/nayaranunesvieira" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:nayvieira_@hotmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 border-top pt-4">
+            <p class="text-white-50 mb-2">&copy; 2025 DevNayaraVieira TextMentor. Todos os direitos reservados.</p>
+            <p class="small text-white-50">As funcionalidades de IA são fornecidas pela HuggingFace Inference API.</p>
+        </div>
+    </div>
+    <!-- Subtle background pattern -->
+    <div class="footer-pattern"></div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/ai-service.js"></script>
+    <script src="assets/js/history.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Opcional para testes locais -->
+    <script src="assets/js/test-ai.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/hover-effect.js"></script>
+</body>
+</html>

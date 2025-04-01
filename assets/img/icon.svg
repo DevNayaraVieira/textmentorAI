@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fundo do logo - quadrado com bordas arredondadas -->
+  <rect width="200" height="200" rx="40" ry="40" fill="url(#blue-gradient)"/>
+  
+  <!-- Letra T em branco -->
+  <text x="100" y="145" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF" text-anchor="middle">T</text>
+  
+  <!-- Definição do gradiente azul -->
+  <defs>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66ACFF"/>
+      <stop offset="100%" stop-color="#2A5AD1"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,363 @@
+/* ============================================
+ * TextMentor - Animações Personalizadas
+ * Efeitos baseados no tema azul
+ * ============================================ */
+
+/* Animação para o cursor personalizado */
+@keyframes cursorPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animação para elementos que aparecem com fade */
+.animate {
+    animation: fadeInUp 1s ease;
+}
+
+/* Animações para elementos com AOS (Animate On Scroll) */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação para botões */
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0);
+    }
+}
+
+/* Efeito de gradiente animado para botões */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn-azul:hover {
+    background-size: 200% 200%;
+    animation: gradientFlow 3s ease infinite;
+}
+
+/* Animação para a timeline */
+@keyframes timelinePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0);
+    }
+}
+
+/* Efeito de foco para campos de texto */
+@keyframes focusGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0);
+    }
+}
+
+/* Animação para os exemplos */
+@keyframes exampleHighlight {
+    0% {
+        border-left-color: var(--azul-claro);
+    }
+    50% {
+        border-left-color: var(--azul-principal);
+    }
+    100% {
+        border-left-color: var(--azul-claro);
+    }
+}
+
+/* Atualização para o highlight de texto */
+.highlight-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3em;
+    background-color: var(--azul-overlay);
+    z-index: -1;
+    transform-origin: bottom left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Animação para os cards de recursos */
+@keyframes cardReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card {
+    animation: cardReveal 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+/* Animação para os ícones de recursos */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.skill-icon {
+    animation: iconPulse 2s ease-in-out infinite alternate;
+    animation-delay: calc(var(--animation-order, 0) * 0.2s);
+}
+
+/* Efeito de highlight para texto importante */
+.highlight-text {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3em;
+    background-color: var(--azul-overlay);
+    z-index: -1;
+    transform-origin: bottom left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.highlight-text:hover::before {
+    transform: scaleX(1);
+}
+
+/* Efeito para botões do editor */
+@keyframes toolButtonHighlight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.btn-tool:hover {
+    background-image: linear-gradient(to right, rgba(74, 124, 255, 0.1) 0%, rgba(74, 124, 255, 0.3) 50%, rgba(74, 124, 255, 0.1) 100%);
+    background-size: 200% 100%;
+    animation: toolButtonHighlight 1s ease-in-out infinite;
+}
+
+/* Efeito de flutuação para a imagem do hero */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-image img {
+    animation: floatAnimation 5s ease-in-out infinite;
+}
+
+/* Efeito de shimmer para elementos de carregamento */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.processing-indicator .spinner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+.example-after {
+    animation: exampleHighlight 2s infinite;
+}
+
+/* Animação para ícones de mídia social */
+@keyframes socialIconRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.social-link:hover i {
+    animation: socialIconRotate 0.5s ease-in-out;
+}
+
+/* Animação para resultados de texto */
+@keyframes resultFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.editor-output {
+    animation: resultFadeIn 0.5s ease-out;
+}
+
+/* Animação para mensagens de sucesso */
+@keyframes successPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    animation: successPop 0.5s ease-out;
+}
+
+/* Animação para o botão de copiar */
+@keyframes copySuccess {
+    0% {
+        background-color: var(--azul-principal);
+    }
+    50% {
+        background-color: #28a745;
+    }
+    100% {
+        background-color: var(--azul-principal);
+    }
+}
+
+.copy-success {
+    animation: copySuccess 1.5s ease;
+}
+/* Efeitos de gradiente animado para seções */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(-45deg, #4A7CFF, #3A62CC, #2A5AD1, #5380D8);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  /* Efeito de hover refinado para cards */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(74, 124, 255, 0.15);
+  }
+  
+  /* Efeito de typing mais suave */
+  @keyframes smoothCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .typed-cursor {
+    opacity: 1;
+    animation: smoothCursor 1.1s infinite;
+  }
+  
+  /* Animação de entrada para elementos principais */
+  @keyframes fadeScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .fade-scale {
+    animation: fadeScale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  
+  /* Efeito de partículas para o fundo (simples) */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }

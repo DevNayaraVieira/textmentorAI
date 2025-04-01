@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Fundo com gradiente -->
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFD1DC" />
+        <stop offset="100%" stop-color="#FF9EB5" />
+      </linearGradient>
+      <linearGradient id="docGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF" />
+        <stop offset="100%" stop-color="#F5F5F5" />
+      </linearGradient>
+      <linearGradient id="aiGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#62C4FF" />
+        <stop offset="100%" stop-color="#3A8CC1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Círculo decorativo de fundo -->
+    <circle cx="550" cy="300" r="250" fill="url(#bgGradient)" opacity="0.2" />
+    
+    <!-- Documento principal -->
+    <rect x="150" y="100" width="350" height="450" rx="15" ry="15" fill="url(#docGradient)" stroke="#FFD1DC" stroke-width="2" />
+    
+    <!-- Linhas de texto no documento -->
+    <rect x="180" y="150" width="290" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="180" width="250" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="210" width="290" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="240" width="200" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="270" width="290" height="12" rx="6" ry="6" fill="#FF9EB5" />
+    <rect x="180" y="300" width="290" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="330" width="250" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="360" width="200" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="390" width="290" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="420" width="250" height="12" rx="6" ry="6" fill="#62C4FF" />
+    <rect x="180" y="450" width="180" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    <rect x="180" y="480" width="230" height="12" rx="6" ry="6" fill="#E0E0E0" />
+    
+    <!-- Elementos de IA -->
+    <!-- Cérebro/Chip AI -->
+    <circle cx="600" cy="200" r="60" fill="url(#aiGlow)" opacity="0.8" />
+    <path d="M580 180 L590 170 L610 170 L620 180 L620 220 L610 230 L590 230 L580 220 Z" fill="#FFFFFF" fill-opacity="0.6" />
+    <circle cx="600" cy="200" r="15" fill="#FFFFFF" fill-opacity="0.8" />
+    <line x1="600" y1="185" x2="600" y2="215" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="585" y1="200" x2="615" y2="200" stroke="#FFFFFF" stroke-width="3" />
+    <line x1="590" y1="190" x2="610" y2="210" stroke="#FFFFFF" stroke-width="2" />
+    <line x1="590" y1="210" x2="610" y2="190" stroke="#FFFFFF" stroke-width="2" />
+    
+    <!-- Raios de conexão -->
+    <path d="M550 230 Q 525 270, 470 270" stroke="#62C4FF" stroke-width="3" fill="none" stroke-dasharray="5,5" />
+    
+    <!-- Ondas de IA entrando no documento -->
+    <path d="M470 270 Q 430 290, 400 280 Q 370 270, 350 300" stroke="#FF9EB5" stroke-width="4" fill="none" />
+    
+    <!-- Personagem simplificado -->
+    <circle cx="650" cy="400" r="50" fill="#FFD1DC" />
+    <circle cx="650" cy="340" r="30" fill="#FFD1DC" />
+    
+    <!-- Detalhes do personagem -->
+    <ellipse cx="640" cy="335" rx="5" ry="6" fill="#333333" />
+    <ellipse cx="660" cy="335" rx="5" ry="6" fill="#333333" />
+    <path d="M640 355 Q 650 365, 660 355" stroke="#333333" stroke-width="3" fill="none" />
+    
+    <!-- Braço apontando para o documento -->
+    <path d="M610 390 Q 550 360, 500 370" stroke="#FFD1DC" stroke-width="12" fill="none" stroke-linecap="round" />
+    <circle cx="500" cy="370" r="8" fill="#FFD1DC" />
+    
+    <!-- Partículas brilhantes -->
+    <circle cx="500" cy="200" r="5" fill="#62C4FF" opacity="0.7" />
+    <circle cx="520" cy="230" r="3" fill="#62C4FF" opacity="0.5" />
+    <circle cx="480" cy="250" r="4" fill="#62C4FF" opacity="0.6" />
+    <circle cx="510" cy="280" r="2" fill="#62C4FF" opacity="0.8" />
+    <circle cx="450" cy="220" r="3" fill="#62C4FF" opacity="0.7" />
+    
+    <!-- Pequenas estrelas ao redor do elemento IA -->
+    <path d="M620 150 L625 160 L635 160 L627 167 L630 177 L620 172 L610 177 L613 167 L605 160 L615 160 Z" fill="#FFF44F" opacity="0.7" />
+    <path d="M560 230 L563 238 L570 238 L564 243 L566 250 L560 246 L554 250 L556 243 L550 238 L557 238 Z" fill="#FFF44F" opacity="0.5" />
+    <path d="M640 250 L643 258 L650 258 L644 263 L646 270 L640 266 L634 270 L636 263 L630 258 L637 258 Z" fill="#FFF44F" opacity="0.6" />
+  </svg>

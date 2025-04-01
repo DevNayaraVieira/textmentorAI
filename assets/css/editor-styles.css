@@ -1,0 +1,452 @@
+/* ============================================
+ * TextMentor - Estilos Específicos do Editor
+ * Complementos para o componente principal do editor
+ * ============================================ */
+
+/* Estilização avançada para o editor */
+.editor-wrapper {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.editor-wrapper:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(74, 124, 255, 0.3);
+}
+
+/* Estilos para o contador de caracteres */
+.char-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #999;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9));
+    padding: 3px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.char-counter.warning {
+    color: #ff6b6b;
+    font-weight: bold;
+    background: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.2));
+}
+
+[data-theme="dark"] .char-counter {
+    background: linear-gradient(to right, rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.9));
+    color: #ccc;
+}
+
+[data-theme="dark"] .char-counter.warning {
+    color: #ff8585;
+    background: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.2));
+}
+
+/* Sistema de notificação para feedback */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification-info {
+    background: linear-gradient(to right, var(--azul-principal), var(--azul-claro));
+}
+
+.notification-success {
+    background: linear-gradient(to right, #10b981, #6ee7b7);
+}
+
+.notification-error {
+    background: linear-gradient(to right, #ef4444, #fca5a5);
+}
+
+.notification-warning {
+    background: linear-gradient(to right, #f59e0b, #fcd34d);
+}
+
+/* Estilos para a barra de ferramentas do editor com efeitos hover */
+.editor-toolbar {
+    position: relative;
+    overflow: hidden;
+}
+
+.editor-toolbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--azul-principal), var(--azul-escuro));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.editor-toolbar:hover::after {
+    transform: scaleX(1);
+}
+
+/* Estilização para botões com contador de uso */
+.btn-tool {
+    position: relative;
+}
+
+.btn-tool::after {
+    content: attr(data-usage);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--azul-principal);
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.btn-tool[data-usage]:not([data-usage="0"])::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilização para o texto processado */
+.editor-output mark {
+    background-color: rgba(74, 124, 255, 0.2);
+    border-bottom: 1px dashed var(--azul-principal);
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.editor-output mark.suggestion {
+    background-color: rgba(98, 196, 255, 0.2);
+    border-bottom: 1px dashed var(--azul-claro);
+}
+
+.editor-output mark.correction {
+    background-color: rgba(16, 185, 129, 0.2);
+    border-bottom: 1px dashed #10b981;
+}
+
+[data-theme="dark"] .editor-output mark {
+    background-color: rgba(74, 124, 255, 0.3);
+}
+
+[data-theme="dark"] .editor-output mark.suggestion {
+    background-color: rgba(98, 196, 255, 0.3);
+}
+
+[data-theme="dark"] .editor-output mark.correction {
+    background-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Estilos para diferentes tons de escrita */
+.tone-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-right: 5px;
+}
+
+.tone-professional {
+    background-color: var(--azul-overlay);
+    color: var(--azul-principal);
+    border: 1px solid var(--azul-borda);
+}
+
+.tone-casual {
+    background-color: rgba(74, 124, 255, 0.1);
+    color: var(--azul-principal);
+    border: 1px solid var(--azul-claro);
+}
+
+.tone-academic {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.tone-friendly {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.tone-formal {
+    background-color: rgba(30, 41, 59, 0.1);
+    color: #1e293b;
+    border: 1px solid rgba(30, 41, 59, 0.3);
+}
+
+[data-theme="dark"] .tone-formal {
+    background-color: rgba(226, 232, 240, 0.1);
+    color: #e2e8f0;
+    border: 1px solid rgba(226, 232, 240, 0.3);
+}
+
+/* Tooltip para os botões de ferramentas */
+.btn-tool {
+    position: relative;
+}
+
+.btn-tool::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.btn-tool:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Efeito de pulsação para o botão de processamento */
+@keyframes pulseEffect {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 255, 0);
+    }
+}
+
+#btnProcess:not(:disabled) {
+    animation: pulseEffect 2s infinite;
+}
+
+/* Estilização especial para o modo de sugestões */
+.suggestions-mode .editor-output {
+    padding: 0;
+    overflow: hidden;
+}
+
+.suggestions-mode .editor-output ul {
+    margin: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.suggestions-mode .editor-output li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+.suggestions-mode .editor-output li:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilização para o histórico de edição */
+.history-item {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--azul-claro);
+}
+
+.history-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.history-date {
+    font-style: italic;
+}
+
+.history-tool {
+    font-weight: 600;
+    color: var(--azul-principal);
+}
+
+.history-text {
+    font-size: 14px;
+    color: var(--texto);
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.history-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.history-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 576px) {
+    .editor-toolbar {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .btn-tool {
+        flex: 1;
+        min-width: 80px;
+        margin-right: 0;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    
+    .tone-selector {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    
+    .notification {
+        left: 20px;
+        right: 20px;
+        text-align: center;
+    }
+}/* Editor moderno estilo Clarice.ai */
+.editor-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(74, 124, 255, 0.1);
+    border: 1px solid rgba(74, 124, 255, 0.08);
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+  }
+  
+  /* Barra de ferramentas mais elegante */
+  .editor-toolbar {
+    background: rgba(74, 124, 255, 0.03);
+    border-bottom: 1px solid rgba(74, 124, 255, 0.08);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  /* Botões de ferramentas mais modernos */
+  .btn-tool {
+    background-color: transparent;
+    color: var(--texto);
+    border: 1px solid rgba(74, 124, 255, 0.15);
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .btn-tool:hover {
+    background-color: rgba(74, 124, 255, 0.08);
+    border-color: rgba(74, 124, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .btn-tool.active {
+    background: var(--azul-principal);
+    color: white;
+    border-color: var(--azul-principal);
+  }
+  
+  /* Área de texto mais elegante */
+  .editor-input-container textarea {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: transparent;
+    resize: vertical;
+    min-height: 200px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Contador de caracteres moderno */
+  .char-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(74, 124, 255, 0.1);
+    color: var(--azul-principal);
+    transition: all 0.3s ease;
+  }
+  
+  /* Resultado da IA com visual melhorado */
+  .editor-output {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: rgba(74, 124, 255, 0.02);
+    border-radius: 12px;
+    margin: 15px;
+    border: 1px solid rgba(74, 124, 255, 0.05);
+  }
+  
+  /* Notificações mais elegantes */
+  .notification {
+    border-radius: 12px;
+    padding: 16px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }

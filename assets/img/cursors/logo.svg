@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Definição de gradientes -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD1DC" />
+      <stop offset="100%" stop-color="#FF9EB5" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#62C4FF" />
+      <stop offset="100%" stop-color="#3A8CC1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Círculo de fundo -->
+  <circle cx="100" cy="100" r="90" fill="white" />
+  
+  <!-- Letra T estilizada principal -->
+  <path d="M60 50 L140 50 L140 70 L110 70 L110 150 L90 150 L90 70 L60 70 Z" fill="url(#logoGradient)" />
+  
+  <!-- Linhas de texto (representando escrita) -->
+  <rect x="55" y="90" width="90" height="5" rx="2.5" fill="#FFD1DC" opacity="0.6" />
+  <rect x="55" y="105" width="70" height="5" rx="2.5" fill="#FFD1DC" opacity="0.6" />
+  <rect x="55" y="120" width="90" height="5" rx="2.5" fill="#FFD1DC" opacity="0.6" />
+  
+  <!-- Elemento de IA (pequeno circuito/cérebro) -->
+  <circle cx="145" cy="135" r="25" fill="url(#aiGradient)" opacity="0.7" />
+  <path d="M135 125 L155 125 L155 145 L135 145 Z" fill="none" stroke="white" stroke-width="2" />
+  <circle cx="145" cy="135" r="5" fill="white" />
+  <line x1="145" y1="125" x2="145" y2="145" stroke="white" stroke-width="2" />
+  <line x1="135" y1="135" x2="155" y2="135" stroke="white" stroke-width="2" />
+  <line x1="138" y1="128" x2="152" y2="142" stroke="white" stroke-width="1.5" />
+  <line x1="138" y1="142" x2="152" y2="128" stroke="white" stroke-width="1.5" />
+</svg>

@@ -1,0 +1,177 @@
+/* ============================================
+ * TextMentor - Estilos de Cursor Personalizados
+ * ============================================ */
+
+/* Removendo os cursores URL que estavam causando duplicação */
+body, a, button, .btn, .nav-link, .social-link, .navbar-brand,
+.btn-tool, .project-card, .skill-card, .hero-badge, .theme-switch,
+input[type="text"], textarea, input[type="email"], input[type="password"], 
+input[type="search"], .editor-input-container textarea,
+[title], [data-tooltip], .tooltip {
+    cursor: none !important;
+}
+
+/* Estilos para o cursor personalizado */
+#custom-cursor {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 2px solid var(--azul-principal);
+    border-radius: 50%;
+    z-index: 2147483647;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, 
+                background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    filter: drop-shadow(0 0 3px var(--azul-claro));
+    opacity: 0.7;
+    mix-blend-mode: normal;
+}
+
+/* Estilos para o cursor em diferentes estados */
+#custom-cursor.link-hover {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(74, 124, 255, 0.1);
+    border-color: var(--azul-escuro);
+    border-width: 2px;
+    opacity: 0.9;
+}
+
+#custom-cursor.text-edit {
+    width: 3px;
+    height: 24px;
+    border-radius: 1px;
+    background-color: var(--azul-principal);
+    border: none;
+    opacity: 0.8;
+}
+
+#custom-cursor.help-hover {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(74, 124, 255, 0.1);
+    border-color: var(--azul-claro);
+    border-width: 2px;
+    opacity: 0.9;
+}
+
+#custom-cursor.clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+    background-color: rgba(74, 124, 255, 0.3);
+}
+
+/* Ajustes para tema escuro */
+[data-theme="dark"] #custom-cursor {
+    border-color: var(--azul-principal);
+}
+
+[data-theme="dark"] #custom-cursor.link-hover {
+    background-color: rgba(61, 105, 214, 0.15);
+    border-color: var(--azul-claro);
+}
+
+/* Animação para cursor em links */
+@keyframes cursorLinkPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+}
+
+.cursor-link-pulse {
+    animation: cursorLinkPulse 1s ease-in-out infinite;
+}
+
+/* Desativar cursor personalizado em dispositivos touch */
+@media (hover: none) {
+    #custom-cursor {
+        display: none !important;
+    }
+    
+    html, body, a, button, input, textarea, [title], [data-tooltip] {
+        cursor: auto !important;
+    }
+}
+
+/* Estilo avançado para cursor personalizado */
+#custom-cursor {
+    pointer-events: none;
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: var(--azul-principal);
+    border-radius: 50%;
+    z-index: 2147483647;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+    mix-blend-mode: exclusion;
+  }
+  
+  #cursor-follower {
+    pointer-events: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(74, 124, 255, 0.3);
+    border-radius: 50%;
+    z-index: 2147483646;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s, transform 0.1s;
+  }
+  
+  /* Estados do cursor */
+  #custom-cursor.link-hover {
+    width: 14px;
+    height: 14px;
+    background-color: var(--azul-claro);
+  }
+  
+  #custom-cursor.text-edit {
+    width: 4px;
+    height: 25px;
+    border-radius: 2px;
+  }
+  
+  #cursor-follower.link-hover {
+    width: 50px;
+    height: 50px;
+    border-color: rgba(74, 124, 255, 0.5);
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  
+  #cursor-follower.text-edit {
+    opacity: 0;
+  }
+  
+  /* Efeito de clique */
+  .cursor-click {
+    animation: cursorClick 0.5s forwards;
+  }
+  
+  @keyframes cursorClick {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
